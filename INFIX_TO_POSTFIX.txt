@@ -1,0 +1,13 @@
+1.) Scan the infix expression from left to right.
+2.) If the scanned character is an operand, print it.
+3.) For the other part,
+If the priority and fixity of the scanned operator is greater than the priority and fixity of the operator in the stack (or the stack is empty, or the stack contains the character "(' ), press it.
+The operator "^" is right fixative and other operators like "+", "-", "*" and "/" are left fixative. In particular, check the condition where both the operator at the top of the stack and the scanned operator are "^".
+
+4.) In this state, the priority of the sensed operator is higher due to its proper fixity. Therefore, it will be pushed to the operator stack. In all other cases where the top of the operator stack is the same as the scanned operator, then the operator pops off the stack due to left fixity, which makes the scanned operator less preferred.
+5.) Or else, select all operators from the stack that have greater or equal priority than the scanned operator. Then push the scanned service into the stack. (If you hit a parenthesis while popping, stop and push the scanned operator into the tray.)
+6.) If the character "()" is scanned, put it on the stack.
+7.) If the scanned character is ')', eject the stack and slide it until you encounter '(' and discard both parentheses.
+*8.) Repeat steps 2-6 until the infix expression is scanned.
+Print the output
+*9.) Pop and exit the stack until it's empty.
